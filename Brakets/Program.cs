@@ -24,12 +24,9 @@ class Program
             multiplicationColumn = multiplicationColumn * array[i, 0];
         }
 
-        for (int i = 1; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int j = 0; j < array.GetLength(1); j++)
-            {
-                    sumRow += array[i, j];
-            }
+            sumRow += array[1, j];
         }
 
         Console.WriteLine();
