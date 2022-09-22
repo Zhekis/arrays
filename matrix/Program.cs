@@ -10,7 +10,7 @@ namespace matrix
     {
         static void Main(string[] args)
         {
-            rgrgtrh
+            Console.WriteLine();
         }
     }
 }
