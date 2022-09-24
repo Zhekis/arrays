@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brakets", "Brakets.csproj", "{AE44CDF7-7D41-4C98-A168-E8A1147C4C88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "matrix10x10", "..\matrix10x10\matrix10x10.csproj", "{B82CBB0E-8793-4118-B9E1-546C8B1C783E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE44CDF7-7D41-4C98-A168-E8A1147C4C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE44CDF7-7D41-4C98-A168-E8A1147C4C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE44CDF7-7D41-4C98-A168-E8A1147C4C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82CBB0E-8793-4118-B9E1-546C8B1C783E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82CBB0E-8793-4118-B9E1-546C8B1C783E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82CBB0E-8793-4118-B9E1-546C8B1C783E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82CBB0E-8793-4118-B9E1-546C8B1C783E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
