@@ -12,24 +12,24 @@ namespace Dynamicarray
         {
             const string UserChoiceExit = "exit";
             const string UserChoiceSum = "sum";
-            int[] array = new int[1];
-            int[] tempArray = new int[array.Length + 1];
+            int[] array = new int[0];
             int userInputNumber;
             string userChoice = " ";
             int sumArray = 0;
 
-            while (userChoice != "exit")
+            while (userChoice != UserChoiceExit)
             {
-                Console.WriteLine("Введите число (для вывода суммы чисел - введите sum, для выхода - введите exit");
+                Console.WriteLine("Введите число (для вывода суммы чисел - введите " + UserChoiceSum +", для выхода - введите " + UserChoiceExit);
                 userChoice = Console.ReadLine();
 
                 if (userChoice == UserChoiceSum)
+                {
                     Console.WriteLine(sumArray);
+                }             
                 else if (userChoice != UserChoiceSum && userChoice != UserChoiceExit)
                 {
-                    sumArray = 0;
                     userInputNumber = Convert.ToInt32(userChoice);
-                    tempArray = new int[array.Length + 1];
+                    int[] tempArray = new int[array.Length + 1];
 
                     for (int i = 0; i < array.Length; i++)
                     {
@@ -38,12 +38,7 @@ namespace Dynamicarray
 
                     tempArray[tempArray.Length - 1] = userInputNumber;
                     array = tempArray;
-
-                    for (int i = 0; i < array.Length; i++)
-                    {
-                        sumArray += array[i];
-                    }
-
+                    sumArray += userInputNumber;
                     Console.WriteLine();
                 }
             }
