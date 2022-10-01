@@ -10,7 +10,7 @@ namespace MoveArray
     {
         static void Main(string[] args)
         {
-            int[] array = { 1, 2, 3, 4, 5, 6, };
+            int[] array = { 1, 2, 3, 4, 5, 6 };
             int countShift = 3;
             int tempNumber = 0;
 
