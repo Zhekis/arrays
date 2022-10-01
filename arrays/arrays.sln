@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arrays", "arrays.csproj", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dynamicarray", "..\Dynamicarray\Dynamicarray\Dynamicarray.csproj", "{73BA6759-3CE2-4B29-A183-45AC06FF4AA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "underArray", "..\Dynamicarray\underArray\underArray.csproj", "{32078373-E48A-4E88-BAAE-FF20089D8D0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortArrays", "..\SortArrays\SortArrays.csproj", "{A111FBD5-B463-402C-974A-EBA45E572CF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{73BA6759-3CE2-4B29-A183-45AC06FF4AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73BA6759-3CE2-4B29-A183-45AC06FF4AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73BA6759-3CE2-4B29-A183-45AC06FF4AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32078373-E48A-4E88-BAAE-FF20089D8D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32078373-E48A-4E88-BAAE-FF20089D8D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32078373-E48A-4E88-BAAE-FF20089D8D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32078373-E48A-4E88-BAAE-FF20089D8D0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A111FBD5-B463-402C-974A-EBA45E572CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A111FBD5-B463-402C-974A-EBA45E572CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A111FBD5-B463-402C-974A-EBA45E572CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A111FBD5-B463-402C-974A-EBA45E572CF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
