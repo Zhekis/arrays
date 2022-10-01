@@ -12,7 +12,7 @@ namespace Split
         static void Main(string[] args)
         {
             string phrase = "Hi my name is Zheka";
-            string[] words = phrase.Split(new char[] { ' ' });
+            string[] words = phrase.Split(' ');
 
             foreach (string s in words)
             {
