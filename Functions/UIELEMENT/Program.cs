@@ -11,12 +11,10 @@ namespace UIELEMENT
         static void Main(string[] args)
         {
             int mana = 9, maxMana = 10;
-
             Drawbar(mana, maxMana, '#');
             Console.WriteLine();
         }
         
-
         static void Drawbar (int value, int maxValue, char symbol, ConsoleColor color = default)
         {
             ConsoleColor defaultColor = Console.BackgroundColor;
