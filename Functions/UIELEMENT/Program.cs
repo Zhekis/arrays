@@ -10,9 +10,18 @@ namespace UIELEMENT
     {
         static void Main(string[] args)
         {
-            int mana = 9, maxMana = 10;
-            Drawbar(mana, maxMana, '#');
-            Console.WriteLine();
+            int mana;
+            int maxMana = 100;
+
+            while (true)
+            {
+                Console.Write("Введите количесто маны (число процентов от 0 до 100):");
+                mana = Convert.ToInt32(Console.ReadLine());
+
+                Drawbar(mana, maxMana, '#');
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
         
         static void Drawbar (int value, int maxValue, char symbol, ConsoleColor color = default)
