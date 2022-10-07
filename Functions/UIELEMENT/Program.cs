@@ -36,6 +36,7 @@ namespace UIELEMENT
             {
                 bar += '_';
             }
+
             Console.Write(bar + ']');
         }
     }
