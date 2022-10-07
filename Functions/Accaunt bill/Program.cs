@@ -10,6 +10,11 @@ namespace Accaunt_bill
     {
         static void Main(string[] args)
         {
+            const string AddForm = "1";
+            const string WriteForm = "2";
+            const string DeleteForm = "3";
+            const string searchLastName = "4";
+            const string Exit = "5";
             string[] fullUsersNames = new string[0];
             string[] usersPositions = new string[0];
             bool isOpen = true;
@@ -18,31 +23,28 @@ namespace Accaunt_bill
             while (isOpen)
             {
                 Console.Clear();
-                Console.WriteLine("1 - Добавить досье\n2 - Вывести досье\n3 - Удалить досье\n4 - Поиск по фамилии\n5 - Выход");
+                Console.WriteLine(AddForm + " - Добавить досье\n" + WriteForm + " - Вывести досье\n" + DeleteForm + " - Удалить досье\n" + searchLastName + " - Поиск по фамилии\n" + Exit + " - Выход");
                 Console.Write("Введите команду: ");
                 userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
-                    case "1":
+                    case AddForm:
                         AddProfile(ref fullUsersNames, ref usersPositions);
                         break;
-                    case "2":
+                    case WriteForm:
                         WriteProfile(fullUsersNames, usersPositions);
                         Console.ReadKey();
                         break;
-                    case "3":
-                        if (fullUsersNames.Length > 0)
-                            DeleteProfile(ref fullUsersNames, ref usersPositions);
-                        else
-                            Console.WriteLine("Empty");
+                    case DeleteForm:
+                        DeleteProfile(ref fullUsersNames, ref usersPositions);
                         Console.ReadKey();
                         break;
-                    case "4":
+                    case searchLastName:
                         SearchForLastName(fullUsersNames, usersPositions);
                         Console.ReadKey();
                         break;
-                    case "5":
+                    case Exit:
                         isOpen = false;
                         break;
                 }
@@ -63,7 +65,9 @@ namespace Accaunt_bill
             string[] tempArray = new string[array.Length + 1];
 
             for (int i = 0; i < array.Length; i++)
+            {
                 tempArray[i] = array[i];
+            }
 
             array = tempArray;
         }
@@ -78,27 +82,40 @@ namespace Accaunt_bill
 
         static void DeleteProfile (ref string[] fullUsersNames, ref string[] usersPositions)
         {
-            Console.WriteLine("Какой номер досье удалить?");
-            int numberUser = Convert.ToInt32(Console.ReadLine()) - 1;
-
-            if (numberUser < fullUsersNames.Length)
+            if (fullUsersNames.Length > 0)
             {
-                DeleteProfile(ref fullUsersNames, ref numberUser);
-                DeleteProfile(ref usersPositions, ref numberUser);
+                Console.WriteLine("Какой номер досье удалить?");
+                int numberUser = Convert.ToInt32(Console.ReadLine()) - 1;
+
+                if (numberUser < fullUsersNames.Length)
+                {
+                    DeleteProfile(ref fullUsersNames, numberUser);
+                    DeleteProfile(ref usersPositions, numberUser);
+                }
+                else
+                {
+                    Console.WriteLine("Нет такого");
+                }
             }
             else
-                Console.WriteLine("Нет такого");
+            {
+                Console.WriteLine("Empty");
+            }
         }
-        static void DeleteProfile(ref string[] array, ref int numberDel)
+        static void DeleteProfile(ref string[] array, int numberDel)
         {
             string[] tempArray = new string[array.Length - 1];
 
             for (int i = 0; i < array.Length; i++)
             {
                 if (i < numberDel)
+                {
                     tempArray[i] = array[i];
+                }
                 else if (i > numberDel)
+                {
                     tempArray[i - 1] = array[i];
+                }
             }
 
             array = tempArray;
@@ -108,16 +125,22 @@ namespace Accaunt_bill
         {
             Console.WriteLine("Введите фамилию");
             string userInput = Console.ReadLine();
+            string[] words;
             bool IsIncludedString = false;
 
             for (int i = 0; i < fullUsersNames.Length; i++)
             {
-                IsIncludedString = fullUsersNames[i].ToLower().Contains(userInput.ToLower());
+                words = fullUsersNames[i].Split(' ');
+                IsIncludedString = words[0].ToLower().Contains(userInput.ToLower());
 
                 if (IsIncludedString == true)
+                {
                     Console.WriteLine((i + 1) + ". " + fullUsersNames[i] + " - " + usersPositions[i]);
+                }
                 else
+                {
                     Console.WriteLine("Не найдено!");
+                }
             }
         }
     }

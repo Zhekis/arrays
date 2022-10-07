@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arrays", "..\arrays\arrays.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIELEMENT", "UIELEMENT\UIELEMENT.csproj", "{35779A98-CC82-416B-9CC2-8C1A827A9105}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Split", "..\arrays\Split\Split.csproj", "{2E545AE9-EF52-4C2B-9AE4-A4CA42799869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp1", "..\MyApp1\MyApp1.csproj", "{E76751C7-41ED-4359-98AB-557E32552936}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{35779A98-CC82-416B-9CC2-8C1A827A9105}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35779A98-CC82-416B-9CC2-8C1A827A9105}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35779A98-CC82-416B-9CC2-8C1A827A9105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E545AE9-EF52-4C2B-9AE4-A4CA42799869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E545AE9-EF52-4C2B-9AE4-A4CA42799869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E545AE9-EF52-4C2B-9AE4-A4CA42799869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E545AE9-EF52-4C2B-9AE4-A4CA42799869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E76751C7-41ED-4359-98AB-557E32552936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E76751C7-41ED-4359-98AB-557E32552936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E76751C7-41ED-4359-98AB-557E32552936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E76751C7-41ED-4359-98AB-557E32552936}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

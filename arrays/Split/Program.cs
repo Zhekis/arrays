@@ -18,6 +18,7 @@ namespace Split
             {
                 Console.WriteLine(s);
             }
+            Console.WriteLine(words[0]);
         }
     }
 }
