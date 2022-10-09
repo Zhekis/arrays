@@ -12,7 +12,8 @@ namespace ReadInt
         {
             while (true)
             {
-                ConvertToInt();
+               ConvertToInt();
+               //Console.WriteLine(number);
             }
         }
 
@@ -25,9 +26,11 @@ namespace ReadInt
             if (result == true)
             {
                 Console.WriteLine($"Успешно. Число: {number}");
+                //return;
             }
             else
                 Console.WriteLine("Неудачно");
+            //return number;
         }
     }
 }

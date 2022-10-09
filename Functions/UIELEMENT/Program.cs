@@ -10,16 +10,30 @@ namespace UIELEMENT
     {
         static void Main(string[] args)
         {
-            int mana;
-            int maxMana = 100;
+            int manaPercents;
+            int minManaPercents = 0;
+            int maxManaPercents = 100;
+            char symbolInput = '#';
+            string exit = " ";
 
-            while (true)
+            while (exit != "no")
             {
-                Console.Write("Введите количесто маны (число процентов от 0 до 100):");
-                mana = Convert.ToInt32(Console.ReadLine());
+                Console.Write($"Введите процент маны (число процентов от {minManaPercents} до {maxManaPercents}):");
+                manaPercents = Convert.ToInt32(Console.ReadLine());
 
-                Drawbar(mana, maxMana, '#');
-                Console.ReadKey();
+                if (manaPercents <= 100 && manaPercents >= 0)
+                {
+                    Drawbar(manaPercents, maxManaPercents, symbolInput);
+                    Console.WriteLine();
+                }    
+                else
+                {
+                    Console.WriteLine("Некорректное число %");
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("Для выхода введите - no");
+                exit = Console.ReadLine();
                 Console.Clear();
             }
         }
