@@ -21,9 +21,9 @@ namespace UIELEMENT
                 Console.Write($"Введите процент маны (число процентов от {minManaPercents} до {maxManaPercents}):");
                 manaPercents = Convert.ToInt32(Console.ReadLine());
 
-                if (manaPercents <= 100 && manaPercents >= 0)
+                if (manaPercents <= maxManaPercents && manaPercents >= minManaPercents)
                 {
-                    Drawbar(manaPercents, maxManaPercents, symbolInput);
+                    DrawBar(manaPercents, maxManaPercents, symbolInput);
                     Console.WriteLine();
                 }    
                 else
@@ -38,7 +38,7 @@ namespace UIELEMENT
             }
         }
         
-        static void Drawbar (int value, int maxValue, char symbol, ConsoleColor color = default)
+        static void DrawBar (int value, int maxValue, char symbol, ConsoleColor color = default)
         {
             ConsoleColor defaultColor = Console.BackgroundColor;
             string bar = "";
