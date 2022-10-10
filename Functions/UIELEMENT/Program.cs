@@ -15,8 +15,9 @@ namespace UIELEMENT
             int maxManaPercents = 100;
             char symbolInput = '#';
             string exit = " ";
+            string wordExit = "no";
 
-            while (exit != "no")
+            while (exit != wordExit)
             {
                 Console.Write($"Введите процент маны (число процентов от {minManaPercents} до {maxManaPercents}):");
                 manaPercents = Convert.ToInt32(Console.ReadLine());
@@ -32,7 +33,7 @@ namespace UIELEMENT
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("Для выхода введите - no");
+                Console.WriteLine("Для выхода введите - " + wordExit);
                 exit = Console.ReadLine();
                 Console.Clear();
             }
