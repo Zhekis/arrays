@@ -10,25 +10,28 @@ namespace ReadInt
     {
         static void Main(string[] args)
         {
-            GetNumber();
+            Console.WriteLine("Удачно ваше число : " + GetNumber());
         }
 
-        static void GetNumber()
+        static int GetNumber()
         {
-            bool result = false;
+            bool isNumber = false;
+            int result = 0;
 
-            while (result == false)
+            while (isNumber == false)
             {
                 Console.WriteLine("Введите число :");
                 string userInput = Console.ReadLine();
-                result = int.TryParse(userInput,out int number);
+                isNumber = int.TryParse(userInput,out int number);
 
-                if (result == false)
+                if (isNumber == true)
+                    result = number;
+
+                if (isNumber == false)
                     Console.WriteLine("Неудачно, попробуй еще!");
             }
 
-            Console.WriteLine("Удачно");
-            return;
+            return result;
         }
     }
 }
