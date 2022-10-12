@@ -13,6 +13,7 @@ namespace UIELEMENT
             int manaPercents;
             int minManaPercents = 0;
             int maxManaPercents = 100;
+            int maxMana = 20;
             char symbolInput = '#';
             string exit = " ";
             string wordExit = "no";
@@ -24,7 +25,7 @@ namespace UIELEMENT
 
                 if (manaPercents <= maxManaPercents && manaPercents >= minManaPercents)
                 {
-                    DrawBar(manaPercents, maxManaPercents, symbolInput);
+                    DrawBar(manaPercents, maxMana, symbolInput);
                     Console.WriteLine();
                 }    
                 else
@@ -39,17 +40,19 @@ namespace UIELEMENT
             }
         }
         
-        static void DrawBar (int value, int maxValue, char symbol, ConsoleColor color = default)
+        static void DrawBar (float percents, float maxValue, char symbol, ConsoleColor color = default)
         {
-            ConsoleColor defaultColor = Console.BackgroundColor;
+            float number = maxValue * (percents / 100);
+            int value = (int)Math.Round(number);
             string bar = "";
+            ConsoleColor defaultColor = Console.BackgroundColor;
 
             for (int i = 0; i < value; i++)
             {
                 bar += symbol;
             }
 
-            Console.SetCursorPosition (0, 0);
+            Console.SetCursorPosition (0, 2);
             Console.Write('[');
             Console.BackgroundColor = color;
             Console.Write(bar);
