@@ -26,8 +26,7 @@ namespace ReadInt
 
                 if (isNumber == true)
                     result = number;
-
-                if (isNumber == false)
+                else
                     Console.WriteLine("Неудачно, попробуй еще!");
             }
 
