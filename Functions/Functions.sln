@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIELEMENT", "UIELEMENT\UIELEMENT.csproj", "{35779A98-CC82-416B-9CC2-8C1A827A9105}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map", "Map\Map.csproj", "{4471FC77-ECFC-4D08-A4DA-C8FF57697AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuffle", "Shuffle\Shuffle.csproj", "{B073A68B-C8AB-495C-AA63-7B4C0489320E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{35779A98-CC82-416B-9CC2-8C1A827A9105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35779A98-CC82-416B-9CC2-8C1A827A9105}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35779A98-CC82-416B-9CC2-8C1A827A9105}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35779A98-CC82-416B-9CC2-8C1A827A9105}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4471FC77-ECFC-4D08-A4DA-C8FF57697AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4471FC77-ECFC-4D08-A4DA-C8FF57697AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4471FC77-ECFC-4D08-A4DA-C8FF57697AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4471FC77-ECFC-4D08-A4DA-C8FF57697AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B073A68B-C8AB-495C-AA63-7B4C0489320E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B073A68B-C8AB-495C-AA63-7B4C0489320E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B073A68B-C8AB-495C-AA63-7B4C0489320E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B073A68B-C8AB-495C-AA63-7B4C0489320E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
