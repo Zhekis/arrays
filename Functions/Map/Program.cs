@@ -11,18 +11,19 @@ namespace Map
         static void Main(string[] args)
         {
             char[,] map = { {'*', '*', '*', '*', '*', '*' }, { '*', ' ', ' ', ' ', ' ', '*' }, { '*', ' ', '*', ' ', ' ', '*' } , { '*', ' ', '*', '*', ' ', '*' }, { '*', ' ', ' ', '*', ' ', '*' }, { '*', ' ', '*', '*', ' ', '*' }, { '*', ' ', ' ', ' ', ' ', '*' }, { '*', '*', '*', '*', '*', '*' } };
-            int playerX = 1;
-            int playerY = 1;
-            int playerDX = 0;
-            int playerDY = 1;
+            int playerPositionX = 1;
+            int playerPositionY = 1;
+            int playerMoveX = 0;
+            int playerMoveY = 1;
+            char symbolPlayer = 'e';
             bool isMoving = true;
 
             Console.CursorVisible = false;
 
             DrawMap(map);
 
-            Console.SetCursorPosition(playerY, playerX);
-            Console.Write('e');
+            Console.SetCursorPosition(playerPositionY, playerPositionX);
+            Console.Write(symbolPlayer);
 
             while (isMoving)
             {
@@ -30,32 +31,11 @@ namespace Map
                 {
                     ConsoleKeyInfo key = Console.ReadKey(true);
 
-                    switch (key.Key)
+                    ChangeDirection(key, ref playerMoveX, ref playerMoveY);
+
+                    if (map[playerPositionX + playerMoveX, playerPositionY + playerMoveY] != '*')
                     {
-                        case ConsoleKey.UpArrow:
-                            playerDX = -1; playerDY = 0;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            playerDX = 1; playerDY = 0;
-                            break;
-                        case ConsoleKey.LeftArrow:
-                            playerDX = 0; playerDY = -1;
-                            break;
-                        case ConsoleKey.RightArrow:
-                            playerDX = 0; playerDY = 1;
-                            break;
-                    }
-
-                    if (map[playerX + playerDX, playerY + playerDY] != '*')
-                    {
-                        Console.SetCursorPosition(playerY, playerX);
-                        Console.Write(' ');
-
-                        playerX += playerDX;
-                        playerY += playerDY;
-
-                        Console.SetCursorPosition(playerY, playerX);
-                        Console.Write('e');
+                        MovePlayer(ref playerPositionX,ref playerPositionY,ref playerMoveX,ref playerMoveY,ref symbolPlayer);
                     }
                 }
             }
@@ -71,6 +51,41 @@ namespace Map
                 }
 
                 Console.WriteLine();
+            }
+        }
+
+        static void MovePlayer(ref int playerPositionX, ref int playerPositionY,ref int playerMoveX,ref int playerMoveY,ref char symbolPlayer)
+        {
+            Console.SetCursorPosition(playerPositionY, playerPositionX);
+            Console.Write(' ');
+
+            playerPositionX += playerMoveX;
+            playerPositionY += playerMoveY;
+
+            Console.SetCursorPosition(playerPositionY, playerPositionX);
+            Console.Write(symbolPlayer);
+        }
+
+        static void ChangeDirection(ConsoleKeyInfo key, ref int playerMoveX, ref int playerMoveY)
+        {
+            switch (key.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    playerMoveX = -1;
+                    playerMoveY = 0;
+                    break;
+                case ConsoleKey.DownArrow:
+                    playerMoveX = 1;
+                    playerMoveY = 0;
+                    break;
+                case ConsoleKey.LeftArrow:
+                    playerMoveX = 0;
+                    playerMoveY = -1;
+                    break;
+                case ConsoleKey.RightArrow:
+                    playerMoveX = 0;
+                    playerMoveY = 1;
+                    break;
             }
         }
     }
