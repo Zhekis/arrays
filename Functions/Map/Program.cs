@@ -13,8 +13,8 @@ namespace Map
             char[,] map = { {'*', '*', '*', '*', '*', '*' }, { '*', ' ', ' ', ' ', ' ', '*' }, { '*', ' ', '*', ' ', ' ', '*' } , { '*', ' ', '*', '*', ' ', '*' }, { '*', ' ', ' ', '*', ' ', '*' }, { '*', ' ', '*', '*', ' ', '*' }, { '*', ' ', ' ', ' ', ' ', '*' }, { '*', '*', '*', '*', '*', '*' } };
             int playerPositionX = 1;
             int playerPositionY = 1;
-            int playerMoveX = 0;
-            int playerMoveY = 1;
+            int playerDirectionX = 0;
+            int playerDirectionY = 1;
             char symbolPlayer = 'e';
             bool isMoving = true;
 
@@ -27,16 +27,13 @@ namespace Map
 
             while (isMoving)
             {
-                if (Console.KeyAvailable)
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                ChangeDirection(key, ref playerDirectionX, ref playerDirectionY);
+
+                if (map[playerPositionX + playerDirectionX, playerPositionY + playerDirectionY] != '*')
                 {
-                    ConsoleKeyInfo key = Console.ReadKey(true);
-
-                    ChangeDirection(key, ref playerMoveX, ref playerMoveY);
-
-                    if (map[playerPositionX + playerMoveX, playerPositionY + playerMoveY] != '*')
-                    {
-                        MovePlayer(ref playerPositionX,ref playerPositionY,ref playerMoveX,ref playerMoveY,ref symbolPlayer);
-                    }
+                    MovePlayer(ref playerPositionX, ref playerPositionY, ref playerDirectionX, ref playerDirectionY, ref symbolPlayer);
                 }
             }
         }
@@ -54,37 +51,37 @@ namespace Map
             }
         }
 
-        static void MovePlayer(ref int playerPositionX, ref int playerPositionY,ref int playerMoveX,ref int playerMoveY,ref char symbolPlayer)
+        static void MovePlayer(ref int playerPositionX, ref int playerPositionY,ref int playerDirectionX, ref int playerDirectionY, ref char symbolPlayer)
         {
             Console.SetCursorPosition(playerPositionY, playerPositionX);
             Console.Write(' ');
 
-            playerPositionX += playerMoveX;
-            playerPositionY += playerMoveY;
+            playerPositionX += playerDirectionX;
+            playerPositionY += playerDirectionY;
 
             Console.SetCursorPosition(playerPositionY, playerPositionX);
             Console.Write(symbolPlayer);
         }
 
-        static void ChangeDirection(ConsoleKeyInfo key, ref int playerMoveX, ref int playerMoveY)
+        static void ChangeDirection(ConsoleKeyInfo key, ref int playerDirectionX, ref int playerDirectionY)
         {
             switch (key.Key)
             {
                 case ConsoleKey.UpArrow:
-                    playerMoveX = -1;
-                    playerMoveY = 0;
+                    playerDirectionX = -1;
+                    playerDirectionY = 0;
                     break;
                 case ConsoleKey.DownArrow:
-                    playerMoveX = 1;
-                    playerMoveY = 0;
+                    playerDirectionX = 1;
+                    playerDirectionY = 0;
                     break;
                 case ConsoleKey.LeftArrow:
-                    playerMoveX = 0;
-                    playerMoveY = -1;
+                    playerDirectionX = 0;
+                    playerDirectionY = -1;
                     break;
                 case ConsoleKey.RightArrow:
-                    playerMoveX = 0;
-                    playerMoveY = 1;
+                    playerDirectionX = 0;
+                    playerDirectionY = 1;
                     break;
             }
         }
