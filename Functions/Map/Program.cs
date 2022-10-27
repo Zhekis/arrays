@@ -33,7 +33,7 @@ namespace Map
 
                 if (map[playerPositionX + playerDirectionX, playerPositionY + playerDirectionY] != '*')
                 {
-                    MovePlayer(ref playerPositionX, ref playerPositionY, ref playerDirectionX, ref playerDirectionY, ref symbolPlayer);
+                    MovePlayer(ref playerPositionX, ref playerPositionY, playerDirectionX, playerDirectionY, symbolPlayer);
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace Map
             }
         }
 
-        static void MovePlayer(ref int playerPositionX, ref int playerPositionY,ref int playerDirectionX, ref int playerDirectionY, ref char symbolPlayer)
+        static void MovePlayer(ref int playerPositionX, ref int playerPositionY, int playerDirectionX, int playerDirectionY, char symbolPlayer)
         {
             Console.SetCursorPosition(playerPositionY, playerPositionX);
             Console.Write(' ');
