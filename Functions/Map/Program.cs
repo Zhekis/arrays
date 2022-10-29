@@ -16,6 +16,8 @@ namespace Map
             int playerDirectionX = 0;
             int playerDirectionY = 1;
             char symbolPlayer = 'e';
+            char symbolEarser = ' ';
+            char symbolFrame = '*';
             bool isMoving = true;
 
             Console.CursorVisible = false;
@@ -31,9 +33,9 @@ namespace Map
 
                 ChangeDirection(key, ref playerDirectionX, ref playerDirectionY);
 
-                if (map[playerPositionX + playerDirectionX, playerPositionY + playerDirectionY] != '*')
+                if (map[playerPositionX + playerDirectionX, playerPositionY + playerDirectionY] != symbolFrame)
                 {
-                    MovePlayer(ref playerPositionX, ref playerPositionY, playerDirectionX, playerDirectionY, symbolPlayer);
+                    MovePlayer(ref playerPositionX, ref playerPositionY, playerDirectionX, playerDirectionY, symbolPlayer, symbolEarser);
                 }
             }
         }
@@ -51,10 +53,9 @@ namespace Map
             }
         }
 
-        static void MovePlayer(ref int playerPositionX, ref int playerPositionY, int playerDirectionX, int playerDirectionY, char symbolPlayer)
+        static void MovePlayer(ref int playerPositionX, ref int playerPositionY, int playerDirectionX, int playerDirectionY, char symbolPlayer, char symbolEraser)
         {
-            Console.SetCursorPosition(playerPositionY, playerPositionX);
-            Console.Write(' ');
+            DrawSymbol(ref playerPositionX, ref playerPositionY, symbolEraser);
 
             playerPositionX += playerDirectionX;
             playerPositionY += playerDirectionY;
@@ -62,10 +63,10 @@ namespace Map
             DrawSymbol(ref playerPositionX, ref playerPositionY, symbolPlayer);
         }
 
-        static void DrawSymbol(ref int playerPositionX, ref int playerPositionY, char symbolPlayer)
+        static void DrawSymbol(ref int playerPositionX, ref int playerPositionY, char symbol)
         {
             Console.SetCursorPosition(playerPositionY, playerPositionX);
-            Console.Write(symbolPlayer);
+            Console.Write(symbol);
         }
 
         static void ChangeDirection(ConsoleKeyInfo key, ref int playerDirectionX, ref int playerDirectionY)
