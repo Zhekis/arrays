@@ -59,27 +59,37 @@ namespace Map
             playerPositionX += playerDirectionX;
             playerPositionY += playerDirectionY;
 
+            DrawSymbol(ref playerPositionX, ref playerPositionY, symbolPlayer);
+        }
+
+        static void DrawSymbol(ref int playerPositionX, ref int playerPositionY, char symbolPlayer)
+        {
             Console.SetCursorPosition(playerPositionY, playerPositionX);
             Console.Write(symbolPlayer);
         }
 
         static void ChangeDirection(ConsoleKeyInfo key, ref int playerDirectionX, ref int playerDirectionY)
         {
+            const ConsoleKey keyUp = ConsoleKey.UpArrow;
+            const ConsoleKey keyDown = ConsoleKey.DownArrow;
+            const ConsoleKey keyLeft = ConsoleKey.LeftArrow;
+            const ConsoleKey keyRight = ConsoleKey.RightArrow;
+
             switch (key.Key)
             {
-                case ConsoleKey.UpArrow:
+                case keyUp:
                     playerDirectionX = -1;
                     playerDirectionY = 0;
                     break;
-                case ConsoleKey.DownArrow:
+                case keyDown:
                     playerDirectionX = 1;
                     playerDirectionY = 0;
                     break;
-                case ConsoleKey.LeftArrow:
+                case keyLeft:
                     playerDirectionX = 0;
                     playerDirectionY = -1;
                     break;
-                case ConsoleKey.RightArrow:
+                case keyRight:
                     playerDirectionX = 0;
                     playerDirectionY = 1;
                     break;
